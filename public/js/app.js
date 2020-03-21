@@ -16,7 +16,7 @@ weatherForm.addEventListener('submit',(e) => {
     message1.textContent = 'loading ...'
     message2.textContent = ''
     const location = serach.value
-    fetch('http://localhost:3001/weather?address='+location).then((response) => {
+    fetch('/weather?address='+location).then((response) => {
     response.json().then(({error , location , forecastdata} = {}) => {
         if(error){
             message1.textContent = error
